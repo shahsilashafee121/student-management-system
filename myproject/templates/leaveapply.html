@@ -1,0 +1,56 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+{% block student %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v1 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css/register.css' %}">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-color:#7335b7;">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="https://i.pinimg.com/736x/ad/5b/5a/ad5b5af889e8ec67c0d10782a85a5378.jpg" alt="">
+				</div>
+                <form method="post">
+                    <h1>APPLY FOR LEAVE</h1>
+                    <br>
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td><label for="reason">Reason:</label></td>
+                            <td><textarea id="reason" name="reason" rows="4" cols="40" required></textarea></td>
+                        </tr><br>
+                        <tr>
+                            <td><label for="start_date">Start Date:</label></td>
+                            <td><input id="start_date" type="date" name="start_date" required></td>
+                        </tr><br>
+                        <tr>
+                            <td><label for="end_date">End Date:</label></td>
+                            <td><input id="end_date" type="date" name="end_date" required></td>
+                        </tr><br>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <button type="submit">Submit</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                
+                
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+{% endblock student %}

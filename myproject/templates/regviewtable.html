@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+    <style>
+        body{
+            background-color: rgba(234, 229, 238, 0.741);
+        }
+    </style>
+
+    <body>
+       <div class="table-responsive">
+        <h3 style="text-align: center;">TEACHERS LIST</h3><br><br>
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">USERNAME</th>
+                    <th scope="col">FIRST NAME</th>
+                    <th scope="col">SECOND NAME</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">GENDER</th>
+                    <th scope="col">PASSWORD</th>
+                    <th>USERTYPE</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td scope="row">{{ i.user }}</td>
+                    <td>{{ i.firstname }}</td>
+                    <td>{{ i.secondname }}</td>
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.gender }}</td>
+                    <td>{{ i.cnpassword }}</td>
+                    <td>{{i.user.usertype}}</td>
+                    <td>
+                        <a href="/regedit/{{i.id}}" class='btn btn-primary'>EDIT</a>
+                        <a href="/regdelete/{{i.id}}" class='btn btn-danger'>DELETE</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+       </div>
+       
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
+    
+{% endblock content %}
+    

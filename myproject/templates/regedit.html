@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	
+
+	
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v1 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css/register.css' %}">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-color:#7335b7;">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="https://img.freepik.com/free-photo/portrait-young-male-professor-education-day_23-2150980044.jpg?uid=R138971512&ga=GA1.1.134324794.1736146200&semt=ais_hybrid" alt="">
+				</div>
+				<form action="/regupdate/{{data.id}}" method='POST'>
+					{% csrf_token %}
+					<h3>Registration Form</h3>
+					<div class="form-group">
+						<input type="text" placeholder="FIRSTNAME" class="form-control" name='fname' value="{{data.firstname}}">
+						<input type="text" placeholder="LASTNAME" class="form-control" name="sname" value="{{data.secondname}}">
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="USERNAME" class="form-control" name="uname" value="{{data.user.username}}">
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="EMAIL" class="form-control" name="uemail" value="{{data.email}}">
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="PASSWORD" class="form-control" name="password" value="{{data.password}}">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+                    <div class="form-wrapper">
+						<input type="text" placeholder="CONFIRM PASSWORD" class="form-control" name="cpassword" value="{{data.cnpassword}}">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+                    
+					<button type="submit">UPDATE
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+{% endblock content %}

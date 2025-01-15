@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background:url('https://wallpaperboat.com/wp-content/uploads/2020/02/education-16.jpg');
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background-size: cover; */
+  gap: 20px;
+}
+.container h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight:900px;
+  letter-spacing: 0.2rem;
+  color: rgba(1, 10, 17, 0.913);
+}
+.container .gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .gallery .img-box {
+  width: 250px;
+  height: 500px;
+  margin: 5px;
+  border: 0.5px solid lightgray;
+  border-radius: 50px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background: url('https://img.freepik.com/free-photo/view-3d-businessman_23-2150710028.jpg?semt=ais_hybrid');
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  transition: width 0.4s;
+}
+.container .gallery .img-box h2 {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.2rem;
+  font-weight: bolder;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left:25%;
+  width: 75%;
+  background-color: rgba(238, 247, 255, 0.5882352941);
+  padding: 2% 5%;
+  border-radius: 8px 0 0 8px;
+  transition: bottom 0.4s, opacity;
+}
+.container .gallery .img-box:nth-child(2) {
+  background: url(https://i.pinimg.com/736x/67/99/1e/67991e044b9cbeaa59822376c269b264.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.container .gallery .img-box:nth-child(3) {
+  background: url(https://i.pinimg.com/736x/e8/f9/90/e8f990b048428fdb747b613f0a8c652b.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.container .gallery .img-box:nth-child(4) {
+  background: url(https://i.pinimg.com/736x/e8/f9/90/e8f990b048428fdb747b613f0a8c652b.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.container .gallery .img-box:hover {
+  width: 300px;
+}
+.container .gallery .img-box:hover h2 {
+  opacity: 1;
+  bottom: 10%;
+}
+
+@media screen and (max-width: 600px) {
+  .img-box {
+    height: 200px;
+  }
+  .img-box:hover {
+    width: 300px !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  h1 {
+    font-size: 1.2rem !important;
+  }
+  h2 {
+    font-size: 0.9rem !important;
+    text-decoration: none;
+  }
+  .img-box {
+    width: 50px !important;
+    height: 200px !important;
+    border-radius: 20px !important;
+  }
+  .img-box:hover {
+    width: 110px !important;
+  }
+}/*# sourceMappingURL=style.css.map */
+a{
+  text-decoration: none;
+  color: black;
+}
+body{
+  background:black
+}
+.headr-text h1{
+  color: brown;
+}

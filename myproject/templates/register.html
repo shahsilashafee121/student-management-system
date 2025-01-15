@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	
+
+	
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v1 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css/register.css' %}">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-color:#7335b7;">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="https://i.pinimg.com/474x/9f/09/54/9f09547aac8203a07aa05cf896a7dec2.jpg" alt="">
+				</div>
+				<form action="" method='POST'>
+					{% csrf_token %}
+					<h3>ADD TEACHER</h3>
+					<div class="form-group">
+						<input type="text" placeholder="FIRSTNAME" class="form-control" name='fname' required>
+						<input type="text" placeholder="LASTNAME" class="form-control" name="sname">
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="USERNAME" class="form-control" name="uname">
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="EMAIL" class="form-control" name="uemail">
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					<div class="form-wrapper">
+						<select name="ugender" id="" class="form-control" >
+							<option value="" disabled selected>GENDER</option>
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="other">Other</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="PASSWORD" class="form-control" name="upassword">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="CONFIRM PASSWORD" class="form-control" name="cpassword">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<button type="submit">REGISTER
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+{% endblock content %}

@@ -1,0 +1,75 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+{% block student %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v1 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css/register.css' %}">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-color:#7335b7;">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="https://i.pinimg.com/736x/ad/5b/5a/ad5b5af889e8ec67c0d10782a85a5378.jpg" alt="">
+				</div>
+				<form action="/studentprofileupdate/{{data.id}}" method='POST'>
+					{% csrf_token %}
+					<h3>EDIT PROFILE    </h3>
+					<div class="form-group">
+						<input type="text" placeholder="First Name" class="form-control" name='fname' required value='{{data.firstname}}'>
+						<input type="text" placeholder="Last Name" class="form-control" name="sname" value='{{data.secondname}}'>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Username" class="form-control" name="uname" value="{{data.user.username}}">
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" placeholder="Email Address" class="form-control" name="uemail" value='{{data.email}}' >
+						<i class="zmdi zmdi-email"></i>
+					</div>
+                    <div class="form-wrapper">
+						<select name="udepartment" id="" class="form-control" >
+							<option value="" disabled {% if not data.department %}selected{% endif %} >department</option>
+							<option value="python" {% if data.department == 'python' %}selected{% endif %} >python</option>
+							<option value="java" {% if data.department == 'java' %}selected{% endif %}>java</option>
+							<option value="other" {% if data.department == 'other' %}selected{% endif %}>Other</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+					</div>
+					<div class="form-wrapper">
+						<select name="ugender" id="" class="form-control">
+							<option value="" disabled {% if not data.gender  %}selected{% endif %}>Gender</option>
+							<option value="female" {% if data.gender == 'Female' %}selected{% endif %}>Female</option>
+							<option value="male" {% if data.gender == 'Male' %}selected{% endif %}>Male</option>
+
+							<option value="other" {% if data.gender == 'Other' %}selected{% endif %}>Other</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+					</div>
+                    <div class="form-wrapper">
+						<input type="number" placeholder="Age" class="form-control" name="age" value='{{data.age}}'>
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					
+                    
+					
+					<button type="submit" >EDIT
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+{% endblock student %}
